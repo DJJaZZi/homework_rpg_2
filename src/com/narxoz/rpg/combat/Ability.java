@@ -37,9 +37,14 @@ public interface Ability {
     // - String getDescription()
     // - Ability clone()  <-- IMPORTANT for deep copying!
 
+    enum AbilityType {
+        Damage, Buff, Debuff, Ultimate
+    }
+
     String getName();
     int getDamage();
     String getDescription();
+    AbilityType getType();
     Ability clone();
 
 
