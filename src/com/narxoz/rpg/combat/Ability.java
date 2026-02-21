@@ -37,4 +37,10 @@ public interface Ability {
     // - String getDescription()
     // - Ability clone()  <-- IMPORTANT for deep copying!
 
+    String getName();
+    int getDamage();
+    String getDescription();
+    Ability clone();
+
+
 }
