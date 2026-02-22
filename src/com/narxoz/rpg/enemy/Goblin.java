@@ -212,4 +212,7 @@ public class Goblin extends Enemy {
         this.element = element;
     }
 
+    public void setLootTable(LootTable lootTable) {
+        this.lootTable = lootTable;
+    }
 }

@@ -105,7 +105,7 @@ public class DragonBoss extends Enemy {
      * either simplified (package-private, called only by Builder)
      * or replaced entirely.
      */
-    public DragonBoss(String name, int health, int damage, int defense, int speed,
+    DragonBoss(String name, int health, int damage, int defense, int speed,
                       String element, List<Ability> abilities, Map<Integer, Integer> phases,
                       LootTable lootTable, String aiBehavior, boolean canFly,
                       boolean hasBreathAttack, int wingspan) {
@@ -115,8 +115,8 @@ public class DragonBoss extends Enemy {
         this.defense = defense;
         this.speed = speed;
         this.element = element;
-        this.abilities = abilities != null ? abilities : new ArrayList<>();
-        this.phases = phases != null ? phases : new HashMap<>();
+        this.abilities = abilities != null ? new ArrayList<>(abilities) : new ArrayList<>();
+        this.phases = phases != null ? new HashMap<>(phases) : new HashMap<>();
         this.lootTable = lootTable;
         this.aiBehavior = aiBehavior;
         this.canFly = canFly;

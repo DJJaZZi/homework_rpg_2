@@ -94,6 +94,7 @@ public class BasicEnemyBuilder implements EnemyBuilder {
         }
         Goblin goblin = new Goblin(name, health, damage, defense, speed);
         goblin.setElement(this.element);
+        goblin.setLootTable(this.lootTable);
         for (Ability a : this.abilities) {
             goblin.addAbility(a);
         }
