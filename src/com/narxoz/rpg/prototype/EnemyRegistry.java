@@ -11,6 +11,7 @@ public class EnemyRegistry {
         templates.put(key, template);
         System.out.println("Registered template: " + key);
     }
+
     public Enemy createFromTemplate(String key) {
         Enemy template = templates.get(key);
         if (template == null) {
@@ -18,6 +19,7 @@ public class EnemyRegistry {
         }
         return template.clone();
     }
+
     public void listTemplates() {
         System.out.println("Available Enemy Templates:");
         if (templates.isEmpty()) {
