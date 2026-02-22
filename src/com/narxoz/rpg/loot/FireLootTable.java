@@ -19,8 +19,6 @@ public class FireLootTable implements LootTable{
         this.experienceDrop = 1000;
     }
 
-
-
     @Override
     public List<String> getItems() {
         return items;
