@@ -105,7 +105,7 @@ public class DragonBoss extends Enemy {
      * either simplified (package-private, called only by Builder)
      * or replaced entirely.
      */
-    DragonBoss(String name, int health, int damage, int defense, int speed,
+    public DragonBoss(String name, int health, int damage, int defense, int speed,
                       String element, List<Ability> abilities, Map<Integer, Integer> phases,
                       LootTable lootTable, String aiBehavior, boolean canFly,
                       boolean hasBreathAttack, int wingspan) {
