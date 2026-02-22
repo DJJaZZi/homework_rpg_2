@@ -49,4 +49,6 @@ public interface LootTable {
     int getExperienceDrop();
     String getLootInfo();
     LootTable clone();
+
+
 }

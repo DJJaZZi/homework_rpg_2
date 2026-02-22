@@ -1,6 +1,6 @@
 # Homework 2: Detailed Assignment Instructions
 
-## Background Story
+fc## Background Story
 
 Your RPG game (from Homework 1) has heroes — warriors, mages, and archers. Now it needs **enemies** for those heroes to fight!
 
