@@ -14,6 +14,8 @@ public class EnemyDirector {
         this.builder = builder;
     }
 
+    // FACTORY METHOD DELEGATION: The director does not know which concrete
+    // enemy is being created. It calls builder.build() polymorphically.
     public Enemy createMinion(EnemyComponentFactory factory) {
         return builder
                 .setName("Themed Minion")

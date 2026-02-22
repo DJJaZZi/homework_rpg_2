@@ -79,7 +79,6 @@ public class BasicEnemyBuilder implements EnemyBuilder {
         return this;
     }
 
-    // Boss-specific methods are ignored by the basic builder
     @Override
     public EnemyBuilder addPhase(int p, int h) { return this; }
     @Override
@@ -87,6 +86,8 @@ public class BasicEnemyBuilder implements EnemyBuilder {
     @Override
     public EnemyBuilder setWingspan(int w) { return this; }
 
+    // FACTORY METHOD: build() is the factory method.
+    // It validates the fields and acts as the creator, returning a concrete Enemy product.
     @Override
     public Enemy build() {
         if (name == null || name.isEmpty() || health <= 0) {

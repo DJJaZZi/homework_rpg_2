@@ -76,6 +76,8 @@ public class BossEnemyBuilder implements EnemyBuilder{
     @Override
     public EnemyBuilder setWingspan(int wingspan) { this.wingspan = wingspan; return this; }
 
+    // FACTORY METHOD: build() is the factory method.
+    // It validates the fields and acts as the creator, returning a concrete Enemy product.
     @Override
     public Enemy build() {
         if (name == null || name.isEmpty()) {
@@ -85,8 +87,6 @@ public class BossEnemyBuilder implements EnemyBuilder{
             throw new IllegalStateException("Boss health must be greater than zero!");
         }
 
-        // We assume BossEnemyBuilder makes a DragonBoss for this assignment
-        // If it has a breath ability, we set the flag automatically
         for (Ability a : abilities) {
             if (a.getName().toLowerCase().contains("breath")) {
                 this.hasBreathAttack = true;
