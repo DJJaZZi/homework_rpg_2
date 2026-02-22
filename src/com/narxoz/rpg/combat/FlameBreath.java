@@ -10,7 +10,7 @@ public class FlameBreath implements Ability{
         this.name = "Flame Breath";
         this.damage = 75;
         this.description = "Breathes fire causing AoE damage and applying a burn effect";
-        this.type = AbilityType.Damage;
+        this.type = AbilityType.DAMAGE;
     }
 
     @Override

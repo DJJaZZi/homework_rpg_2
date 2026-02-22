@@ -38,7 +38,7 @@ public interface Ability {
     // - Ability clone()  <-- IMPORTANT for deep copying!
 
     enum AbilityType {
-        Damage, Buff, Debuff, Ultimate
+        DAMAGE, BUFF, DEBUFF, ULTIMATE
     }
 
     String getName();

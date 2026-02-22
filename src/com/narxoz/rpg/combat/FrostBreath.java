@@ -11,7 +11,7 @@ public class FrostBreath implements Ability{
         this.name = "Frost Breath";
         this.damage = 75;
         this.description = "Breathes a cone of freezing air, dealing damage and severely slowing enemies.";
-        this.type = AbilityType.Damage;
+        this.type = AbilityType.DAMAGE;
     }
 
     @Override

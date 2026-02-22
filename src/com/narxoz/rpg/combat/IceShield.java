@@ -13,7 +13,7 @@ public class IceShield implements Ability{
         this.damage = 0;
         this.defenseBoost = 45;
         this.description = "Encases the caster in thick ice, increasing defense by " + defenseBoost + " and absorbing physical blows.";
-        this.type = type;
+        this.type = AbilityType.BUFF;
     }
 
     public int getDefenseBoost(){

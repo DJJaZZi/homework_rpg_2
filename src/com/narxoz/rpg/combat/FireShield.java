@@ -13,7 +13,7 @@ public class FireShield implements Ability{
         this.damage = 0;
         this.defenseBoost = 60;
         this.description = "Surrounds the caster in a shield of flames, increasing defense by " + defenseBoost + ".";
-        this.type = AbilityType.Buff;
+        this.type = AbilityType.BUFF;
     }
 
     public int getDefenseBoost(){
