@@ -3,6 +3,7 @@ package com.narxoz.rpg.enemy;
 import com.narxoz.rpg.combat.Ability;
 import com.narxoz.rpg.loot.LootTable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -58,7 +59,15 @@ import java.util.List;
  *   - Should clone() return a mutable or immutable copy?
  *   - How do you allow Prototype to modify cloned stats?
  */
-public interface Enemy {
+public abstract class Enemy {
+
+    protected String name;
+    protected int health;
+    protected int damage;
+    protected int defense;
+    protected int speed;
+    protected List<Ability> abilities = new ArrayList<>();
+    protected LootTable lootTable;
 
     // TODO: Define core stat methods
     // - String getName()
@@ -67,17 +76,50 @@ public interface Enemy {
     // - int getDefense()
     // - int getSpeed()
 
+    public String getName() {
+        return name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
     // TODO: Define ability methods
     // - List<Ability> getAbilities()
+
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
 
     // TODO: Define loot methods
     // - LootTable getLootTable()
 
+    public LootTable getLootTable() {
+        return lootTable;
+    }
+
     // TODO: Define display method
     // - void displayInfo()   (shows all stats, abilities, loot)
 
+    public abstract void displayInfo();
+
     // TODO: Define clone method for Prototype pattern
     // - Enemy clone()
+
+    public abstract Enemy clone();
+
     //
     // CRITICAL: This must perform DEEP COPY!
     // If you do shallow copy, cloned enemies will share ability
