@@ -22,12 +22,12 @@ public class IceShield implements Ability{
 
     @Override
     public String getName() {
-        return "";
+        return name;
     }
 
     @Override
     public int getDamage() {
-        return 0;
+        return damage;
     }
 
     @Override
