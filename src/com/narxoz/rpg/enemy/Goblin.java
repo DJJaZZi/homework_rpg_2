@@ -208,7 +208,7 @@ public class Goblin extends Enemy {
         this.abilities.add(ability);
     }
 
-    void setElement(String element){
+    public void setElement(String element){
         this.element = element;
     }
 
