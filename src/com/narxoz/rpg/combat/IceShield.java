@@ -32,12 +32,12 @@ public class IceShield implements Ability{
 
     @Override
     public String getDescription() {
-        return "";
+        return description;
     }
 
     @Override
     public AbilityType getType() {
-        return null;
+        return type;
     }
 
     public void setName(String name) {
