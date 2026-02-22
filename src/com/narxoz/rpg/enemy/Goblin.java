@@ -53,7 +53,7 @@ import java.util.ArrayList;
  *   - Ability list → MUST be deep copied!
  *   - LootTable → MUST be deep copied!
  */
-public class Goblin implements Enemy {
+public class Goblin extends Enemy {
 
     private String name;
     private int health;
