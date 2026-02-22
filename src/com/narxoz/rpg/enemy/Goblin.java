@@ -68,13 +68,13 @@ public class Goblin extends Enemy {
 
     // TODO: Add more fields as needed (element, AI behavior, etc.)
 
-    public Goblin(String name) {
+    public Goblin(String name, int health, int damage, int defense, int speed) {
         this.name = name;
         // Goblin stats: weak but fast
-        this.health = 100;
-        this.damage = 15;
-        this.defense = 5;
-        this.speed = 35;
+        this.health = health;
+        this.damage = damage;
+        this.defense = defense;
+        this.speed = speed;
         this.abilities = new ArrayList<>();
         this.lootTable = null;
         this.element = "NEUTRAL";
@@ -93,6 +93,39 @@ public class Goblin extends Enemy {
 
     public int getHealth() {
         return health;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
+    }
+
+    @Override
+    public int getDefense() {
+        return defense;
+    }
+
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
+
+    @Override
+    public LootTable getLootTable() {
+        return lootTable;
+    }
+
+    public String getElement() {
+        return element;
+    }
+
+    public String getAiBehavior() {
+        return aiBehavior;
     }
 
     public void displayInfo() {
@@ -140,7 +173,7 @@ public class Goblin extends Enemy {
 
     @Override
     public Enemy clone() {
-        Goblin copy = new Goblin(this.name);
+        Goblin copy = new Goblin(this.name, this.health, this.damage, this.defense, this.speed);
         copy.health = this.health;
         copy.damage = this.damage;
         copy.defense = this.defense;
