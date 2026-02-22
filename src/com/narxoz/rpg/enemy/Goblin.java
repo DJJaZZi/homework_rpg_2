@@ -62,6 +62,9 @@ public class Goblin extends Enemy {
     private int speed;
     private List<Ability> abilities;
     private LootTable lootTable;
+    private String element;
+    private String aiBehavior;
+
 
     // TODO: Add more fields as needed (element, AI behavior, etc.)
 
@@ -73,6 +76,9 @@ public class Goblin extends Enemy {
         this.defense = 5;
         this.speed = 35;
         this.abilities = new ArrayList<>();
+        this.lootTable = null;
+        this.element = "NEUTRAL";
+        this.aiBehavior = "BASIC_AGGRESSIVE";
         // TODO: Initialize with default abilities
         // TODO: Initialize with default loot table
     }
@@ -94,8 +100,24 @@ public class Goblin extends Enemy {
         System.out.println("Health: " + health + " | Damage: " + damage
                 + " | Defense: " + defense + " | Speed: " + speed);
         System.out.println("Abilities: " + abilities.size() + " ability(ies)");
+        System.out.println("Element: " + element + " | AI: " + aiBehavior);
         // TODO: Display abilities details
+        if (abilities.isEmpty()) {
+            System.out.println("  - None");
+        } else {
+            for (Ability ability : abilities) {
+                System.out.println("  - " + ability.getName() + ": " + ability.getDescription());
+            }
+        }
         // TODO: Display loot table
+        System.out.println("Loot Info:");
+        if (lootTable != null) {
+            System.out.println("  - " + lootTable.getLootInfo());
+            System.out.println("  - Potential Items: " + String.join(", ", lootTable.getItems()));
+        } else {
+            System.out.println("  - No loot assigned.");
+        }
+        System.out.println();
     }
 
     // TODO: Implement clone() for Prototype pattern
@@ -116,10 +138,45 @@ public class Goblin extends Enemy {
     //     return copy;
     // }
 
+    @Override
+    public Enemy clone() {
+        Goblin copy = new Goblin(this.name);
+        copy.health = this.health;
+        copy.damage = this.damage;
+        copy.defense = this.defense;
+        copy.speed = this.speed;
+        copy.element = this.element;
+        copy.aiBehavior = this.aiBehavior;
+
+        copy.abilities = new ArrayList<>();
+        for (Ability a : this.abilities) {
+            copy.abilities.add(a.clone());
+        }
+
+        if (this.lootTable != null) {
+            copy.lootTable = this.lootTable.clone();
+        }
+        return copy;
+    }
+
     // TODO: Add helper methods for Prototype variant creation
     // Consider methods like:
     // - void multiplyStats(double multiplier) — for Elite/Champion variants
     // - void addAbility(Ability ability) — for enhanced variants
     // - void setElement(String element) — for elemental variants
+
+    public void multiplyStats(double multiplier) {
+        this.health = (int)(this.health * multiplier);
+        this.damage = (int)(this.damage * multiplier);
+        this.defense = (int)(this.defense * multiplier);
+    }
+
+    public void addAbility(Ability ability){
+        this.abilities.add(ability);
+    }
+
+    void setElement(String element){
+        this.element = element;
+    }
 
 }
